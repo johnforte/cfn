@@ -86,6 +86,7 @@ function Cfn (name, template) {
   let awsOpts = {}
   let startedAt = Date.now()
   let params = opts.params
+  let disabledRollback = opts.disabledRollback || true
   let cfParams = opts.cfParams || {}
   let awsConfig = opts.awsConfig
   let capabilities = opts.capabilities || ['CAPABILITY_IAM', 'CAPABILITY_NAMED_IAM']
@@ -359,6 +360,7 @@ function Cfn (name, template) {
               StackName: name,
               Capabilities: capabilities,
               Parameters: noramlizedParams,
+              DisabledRollback: disabledRollback
               Tags: convertTags()
             }, templateObject))
           })
