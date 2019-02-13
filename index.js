@@ -360,7 +360,7 @@ function Cfn (name, template) {
               StackName: name,
               Capabilities: capabilities,
               Parameters: noramlizedParams,
-              DisabledRollback: disabledRollback
+              DisabledRollback: disabledRollback,
               Tags: convertTags()
             }, templateObject))
           })
